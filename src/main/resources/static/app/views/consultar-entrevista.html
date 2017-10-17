@@ -1,0 +1,27 @@
+<form class="form-horizontal">
+    <div class="form-group">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" class="form-control" ng-model="findByNome" placeholder="Pesquisar por nome..." aria-label="Pesquisar por nome...">
+                <span class="input-group-btn">
+                <button class="btn btn-secondary" ng-click="pesquisar()" type="button">Pesquisar</button>
+              </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Nome</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="a in entrevistas">
+                <td>{{a.nome}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</form>

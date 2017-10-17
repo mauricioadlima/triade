@@ -1,0 +1,117 @@
+<ng-include src="'app/views/alert.html'"></ng-include>
+<form class="form-horizontal">
+    <fieldset>
+        <legend>Dados Pessoais</legend>
+        <div class="form-group">
+            <label for="nome" class="col-sm-2 control-label">Nome</label>
+            <div class="col-sm-7">
+                <input type="text" class="form-control" id="nome" ng-model="entrevista.nome">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="dataNascimento" class="col-sm-2 control-label">Data de Nascimento</label>
+            <div class="col-sm-3">
+                <input type="date" class="form-control" id="dataNascimento" ng-model="entrevista.dataNascimento">
+            </div>
+
+            <label for="genero" class="col-sm-1 control-label">Genero</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="genero" ng-model="entrevista.genero">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="naturalidade" class="col-sm-2 control-label">Naturalidade</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="naturalidade" ng-model="entrevista.naturalidade">
+            </div>
+
+            <label for="nacionalidade" class="col-sm-1 control-label">Nacionalidade</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="nacionalidade" ng-model="entrevista.nacionalidade">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="nomePai" class="col-sm-2 control-label">Nome do Pai</label>
+            <div class="col-sm-7">
+                <input type="text" class="form-control" id="nomePai" ng-model="entrevista.nomePai">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="nomeMae" class="col-sm-2 control-label">Nome da Mãe</label>
+            <div class="col-sm-7">
+                <input type="text" class="form-control" id="nomeMae" ng-model="entrevista.nomeMae">
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Dados de Endereço</legend>
+
+        <div class="form-group">
+            <label for="logradouro" class="col-sm-2 control-label">Logradouro</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="logradouro" ng-model="entrevista.logradouro">
+            </div>
+
+            <label for="numero" class="col-sm-1 control-label">Número</label>
+            <div class="col-sm-1">
+                <input type="text" class="form-control" id="numero" ng-model="entrevista.numero">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="cep" class="col-sm-2 control-label">CEP</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="cep" ng-model="entrevista.cep" ng-blur="buscaCep()">
+            </div>
+
+            <label for="estado" class="col-sm-1 control-label">Estado</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="estado" ng-model="entrevista.estado">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="bairro" class="col-sm-2 control-label">Bairro</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="bairro" ng-model="entrevista.bairro">
+            </div>
+
+            <label for="cidade" class="col-sm-1 control-label">Cidade</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="cidade" ng-model="entrevista.cidade">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="residencial" class="col-sm-2 control-label">Telefone Residencial</label>
+            <div class="col-sm-3">
+                <input type="tel" class="form-control" id="residencial" ng-model="entrevista.telefoneResidencial">
+            </div>
+
+            <label for="comercial" class="col-sm-1 control-label">Telefone Comercial</label>
+            <div class="col-sm-3">
+                <input type="tel" class="form-control" id="comercial" ng-model="entrevista.telefoneComercial">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-7">
+                <input type="email" class="form-control" id="email" ng-model="entrevista.email">
+            </div>
+        </div>
+
+    </fieldset>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="reset" class="btn btn-default">Limpar</button>
+            <button type="button" class="btn btn-default" ng-click="salvar()">Salvar</button>
+        </div>
+    </div>
+</form>

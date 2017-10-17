@@ -1,0 +1,19 @@
+logging:
+  level:
+    root: INFO
+
+spring:
+  application:
+    name: "@pom.artifactId@"
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+  profiles:
+    active: production
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: triadedb
+    rest:
+      basePath: /api
