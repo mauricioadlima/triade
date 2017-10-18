@@ -15,7 +15,7 @@
                 <input type="date" class="form-control" id="dataNascimento" ng-model="entrevista.dataNascimento">
             </div>
 
-            <label for="genero" class="col-sm-1 control-label">Genero</label>
+            <label for="genero" class="col-sm-1 control-label">Gênero</label>
             <div class="col-sm-3">
                 <input type="text" class="form-control" id="genero" ng-model="entrevista.genero">
             </div>
@@ -30,6 +30,18 @@
             <label for="nacionalidade" class="col-sm-1 control-label">Nacionalidade</label>
             <div class="col-sm-3">
                 <input type="text" class="form-control" id="nacionalidade" ng-model="entrevista.nacionalidade">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="estadoCivil" class="col-sm-2 control-label">Estado Civil</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="estadoCivil" ng-model="entrevista.estadoCivil">
+            </div>
+
+            <label for="escolaridade" class="col-sm-1 control-label">Escolaridade</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="escolaridade" ng-model="entrevista.escolaridade">
             </div>
         </div>
 
@@ -103,6 +115,187 @@
             <label for="email" class="col-sm-2 control-label">Email</label>
             <div class="col-sm-7">
                 <input type="email" class="form-control" id="email" ng-model="entrevista.email">
+            </div>
+        </div>
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Profissão</legend>
+        <div class="form-group">
+            <label for="trabalha" class="col-sm-2 control-label">Trabalha?</label>
+            <div class="radio" id="trabalha">
+                <label><input type="radio" name="trabalha" value="sim" ng-model="entrevista.trabalha">Sim</label>
+                <label><input type="radio" name="trabalha" value="nao" ng-model="entrevista.trabalha">Não</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="nomeEmpresa" class="col-sm-2 control-label">Nome da Empresa</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="nomeEmpresa" ng-model="entrevista.nomeEmpresa">
+            </div>
+
+            <label for="tempoServico" class="col-sm-1 control-label">Tempo de Serviço</label>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" id="tempoServico" ng-model="entrevista.tempoServico">
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend></legend>
+        <div class="form-group">
+            <label for="motivoCnh" class="col-sm-2 control-label">Por que pretende tirar a CNH?</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="motivoCnh" ng-model="entrevista.motivoCnh">
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Dados da Saúde</legend>
+
+        <div class="form-group">
+            <label for="temProblemaSaude" class="col-sm-2 control-label">Você tem problemas de saúde?</label>
+            <div class="radio" id="temProblemaSaude">
+                <label><input type="radio" name="temProblemaSaude" value="sim" ng-model="entrevista.temProblemaSaude">Sim</label>
+                <label><input type="radio" name="temProblemaSaude" value="nao" ng-model="entrevista.temProblemaSaude">Não</label>
+                <label><input type="radio" name="temProblemaSaude" value="asVezes" ng-model="entrevista.temProblemaSaude">Às Vezes</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="senteFadiga" class="col-sm-2 control-label">Você sente fadiga e/ou cansaço?</label>
+            <div class="radio" id="senteFadiga">
+                <label><input type="radio" name="senteFadiga" value="sim" ng-model="entrevista.senteFadiga">Sim</label>
+                <label><input type="radio" name="senteFadiga" value="nao" ng-model="entrevista.senteFadiga">Não</label>
+                <label><input type="radio" name="senteFadiga" value="asVezes" ng-model="entrevista.senteFadiga">Às Vezes</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="trabalhaNoturno" class="col-sm-2 control-label">Trabalha em período noturno?</label>
+            <div class="radio" id="trabalhaNoturno">
+                <label><input type="radio" name="trabalhaNoturno" value="sim" ng-model="entrevista.trabalhaNoturno">Sim</label>
+                <label><input type="radio" name="trabalhaNoturno" value="nao" ng-model="entrevista.trabalhaNoturno">Não</label>
+                <label><input type="radio" name="trabalhaNoturno" value="asVezes" ng-model="entrevista.trabalhaNoturno">Às Vezes</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="bebidaAlcoolica" class="col-sm-2 control-label">Você toma bebida alcoólica?</label>
+            <div class="radio" id="bebidaAlcoolica">
+                <label><input type="radio" name="bebidaAlcoolica" value="sim" ng-model="entrevista.bebidaAlcoolica">Sim</label>
+                <label><input type="radio" name="bebidaAlcoolica" value="nao" ng-model="entrevista.bebidaAlcoolica">Não</label>
+                <label><input type="radio" name="bebidaAlcoolica" value="asVezes" ng-model="entrevista.bebidaAlcoolica">Às Vezes</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="bebeuOntem" class="col-sm-2 control-label">Você bebeu álcool ontem a noite ou hoje de manhã?</label>
+            <div class="radio" id="bebeuOntem">
+                <label><input type="radio" name="bebeuOntem" value="sim" ng-model="entrevista.bebeuOntem">Sim</label>
+                <label><input type="radio" name="bebeuOntem" value="nao" ng-model="entrevista.bebeuOntem">Não</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="tomaMedicamentos" class="col-sm-2 control-label">Você toma medicamentos?</label>
+            <div class="radio" id="tomaMedicamentos">
+                <label><input type="radio" name="tomaMedicamentos" value="sim" ng-model="entrevista.tomaMedicamentos">Sim</label>
+                <label><input type="radio" name="tomaMedicamentos" value="nao" ng-model="entrevista.tomaMedicamentos">Não</label>
+                <label><input type="radio" name="tomaMedicamentos" value="asVezes" ng-model="entrevista.tomaMedicamentos">Às Vezes</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="ordemMedica" class="col-sm-2 control-label">Os medicamentos são por ordem médica?</label>
+            <div class="radio" id="ordemMedica">
+                <label><input type="radio" name="ordemMedica" value="sim" ng-model="entrevista.ordemMedica">Sim</label>
+                <label><input type="radio" name="ordemMedica" value="nao" ng-model="entrevista.ordemMedica">Não</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="desdeQuandoMedicamento" class="col-sm-2 control-label">Desde quando?</label>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" id="desdeQuandoMedicamento" ng-model="entrevista.desdeQuandoMedicamento">
+            </div>
+
+            <label for="quaisMedicamentos" class="col-sm-1 control-label">Quais?</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="quaisMedicamentos" ng-model="entrevista.quaisMedicamentos">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="medicamentosOntem" class="col-sm-2 control-label">Você tomou medicamento ontem a noite ou hoje cedo?</label>
+            <div class="radio" id="medicamentosOntem">
+                <label><input type="radio" name="medicamentosOntem" value="sim" ng-model="entrevista.medicamentosOntem">Sim</label>
+                <label><input type="radio" name="medicamentosOntem" value="nao" ng-model="entrevista.medicamentosOntem">Não</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="quaisMedicamentosTomou" class="col-sm-2 control-label">Quais?</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="quaisMedicamentosTomou" ng-model="entrevista.quaisMedicamentosTomou">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="possuiDeficiencia" class="col-sm-2 control-label">Possui algum tipo de deficiência?</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="possuiDeficiencia" ng-model="entrevista.possuiDeficiencia">
+            </div>
+            <label for="possuiDeficienciaOutras" class="col-sm-2 control-label">Outras?</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="possuiDeficienciaOutras" ng-model="entrevista.possuiDeficienciaOutras">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="possuiTipoDoenca" class="col-sm-2 control-label">Possui algum tipo de doença?</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="possuiTipoDoenca" ng-model="entrevista.possuiTipoDoenca">
+            </div>
+            <label for="possuiTipoDoencaOutras" class="col-sm-2 control-label">Outras?</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="possuiTipoDoencaOutras" ng-model="entrevista.possuiTipoDoencaOutras">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="problemaPsicologico" class="col-sm-2 control-label">Apresenta algum problema psicológico?</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="problemaPsicologico" ng-model="entrevista.problemaPsicologico">
+            </div>
+            <label for="problemaPsicologicoOutras" class="col-sm-2 control-label">Outras?</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="problemaPsicologicoOutras" ng-model="entrevista.problemaPsicologicoOutras">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="problemaPsicologicoFaleARespeito" class="col-sm-2 control-label">Fale a Respeito:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="problemaPsicologicoFaleARespeito" ng-model="entrevista.problemaPsicologicoFaleARespeito">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="tratamentoMedicoPsicologico" class="col-sm-2 control-label">Você já realizou algum tratamento médico e/ou psicológico?</label>
+            <div class="radio" id="tratamentoMedicoPsicologico">
+                <label><input type="radio" name="tratamentoMedicoPsicologico" value="sim" ng-model="entrevista.tratamentoMedicoPsicologico">Sim</label>
+                <label><input type="radio" name="tratamentoMedicoPsicologico" value="nao" ng-model="entrevista.tratamentoMedicoPsicologico">Não</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="tratamentoMedicoPsicologicoFaleARespeito" class="col-sm-2 control-label">Fale a Respeito:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="tratamentoMedicoPsicologicoFaleARespeito" ng-model="entrevista.tratamentoMedicoPsicologicoFaleARespeito">
             </div>
         </div>
 
