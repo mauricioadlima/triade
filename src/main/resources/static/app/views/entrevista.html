@@ -299,7 +299,233 @@
             </div>
         </div>
 
-    </fieldset>
+        <fieldset>
+            <legend>Situação Familiar</legend>
+
+            <div class="form-group">
+                <label for="familiaDependenciaAlcoolDroga" class="col-sm-2 control-label">Houve ou há na família pessoas com dependência de álcool ou outras drogas?</label>
+                <div class="radio" id="familiaDependenciaAlcoolDroga">
+                    <label><input type="radio" name="familiaDependenciaAlcoolDroga" value="sim" ng-model="entrevista.familiaDependenciaAlcoolDroga">Sim</label>
+                    <label><input type="radio" name="familiaDependenciaAlcoolDroga" value="nao" ng-model="entrevista.familiaDependenciaAlcoolDroga">Não</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="familiaDependenciaAlcoolDrogaDescreva" class="col-sm-2 control-label">Se sim, descreva:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="familiaDependenciaAlcoolDrogaDescreva" ng-model="entrevista.familiaDependenciaAlcoolDrogaDescreva">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="familiaDoencaGrave" class="col-sm-2 control-label">Houve ou há na família pessoas pessoas com alguma doença grave?</label>
+                <div class="radio" id="familiaDoencaGrave">
+                    <label><input type="radio" name="familiaDoencaGrave" value="sim" ng-model="entrevista.familiaDoencaGrave">Sim</label>
+                    <label><input type="radio" name="familiaDoencaGrave" value="nao" ng-model="entrevista.familiaDoencaGrave">Não</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="familiaDoencaGraveDescreva" class="col-sm-2 control-label">Se sim, descreva:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="familiaDoencaGraveDescreva" ng-model="entrevista.familiaDoencaGraveDescreva">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="hobbie" class="col-sm-2 control-label">Quais são suas atividades de lazer, hobbies?</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="hobbie" ng-model="entrevista.hobbie">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="comoFamilia" class="col-sm-2 control-label">Fale a respeito de sua família:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="comoFamilia" ng-model="entrevista.comoFamilia">
+                </div>
+            </div>
+
+            <fieldset>
+                <legend>OUTRAS INFORMAÇÕES</legend>
+
+                <div class="form-group">
+                    <label class="col-sm-2"></label>
+                    <div class="col-sm-6" id="notaDirigirMotoristasBrasileiros">
+                        <label for="notaDirigirMotoristasBrasileiros" class="form-control-label">Se você tivesse que dar uma nota de 0 (zero) a 10 (dez), que nota daria para o modo de dirigir dos motoristas brasileiros:</label>
+                        <label><input type="radio" name="notaDirigirMotoristasBrasileiros" value="0" ng-model="entrevista.notaDirigirMotoristasBrasileiros">0</label>
+                        <label><input type="radio" name="notaDirigirMotoristasBrasileiros" value="01" ng-model="entrevista.notaDirigirMotoristasBrasileiros">01</label>
+                        <label><input type="radio" name="notaDirigirMotoristasBrasileiros" value="02" ng-model="entrevista.notaDirigirMotoristasBrasileiros">02</label>
+                        <label><input type="radio" name="notaDirigirMotoristasBrasileiros" value="03" ng-model="entrevista.notaDirigirMotoristasBrasileiros">03</label>
+                        <label><input type="radio" name="notaDirigirMotoristasBrasileiros" value="04" ng-model="entrevista.notaDirigirMotoristasBrasileiros">04</label>
+                        <label><input type="radio" name="notaDirigirMotoristasBrasileiros" value="05" ng-model="entrevista.notaDirigirMotoristasBrasileiros">05</label>
+                        <label><input type="radio" name="notaDirigirMotoristasBrasileiros" value="06" ng-model="entrevista.notaDirigirMotoristasBrasileiros">06</label>
+                        <label><input type="radio" name="notaDirigirMotoristasBrasileiros" value="07" ng-model="entrevista.notaDirigirMotoristasBrasileiros">07</label>
+                        <label><input type="radio" name="notaDirigirMotoristasBrasileiros" value="08" ng-model="entrevista.notaDirigirMotoristasBrasileiros">08</label>
+                        <label><input type="radio" name="notaDirigirMotoristasBrasileiros" value="09" ng-model="entrevista.notaDirigirMotoristasBrasileiros">09</label>
+                        <label><input type="radio" name="notaDirigirMotoristasBrasileiros" value="10" ng-model="entrevista.notaDirigirMotoristasBrasileiros">10</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2"></label>
+                    <div class="col-sm-6" id="seuModoDirigir">
+                        <label for="seuModoDirigir" class="form-control-label">Se você tivesse que dar uma nota de 0 (zero) a 10 (dez), que nota daria para o seu modo de dirigir, comparado com o modo dos motoristas brasileiros:</label>
+                        <label><input type="radio" name="seuModoDirigir" value="0" ng-model="entrevista.seuModoDirigir">0</label>
+                        <label><input type="radio" name="seuModoDirigir" value="01" ng-model="entrevista.seuModoDirigir">01</label>
+                        <label><input type="radio" name="seuModoDirigir" value="02" ng-model="entrevista.seuModoDirigir">02</label>
+                        <label><input type="radio" name="seuModoDirigir" value="03" ng-model="entrevista.seuModoDirigir">03</label>
+                        <label><input type="radio" name="seuModoDirigir" value="04" ng-model="entrevista.seuModoDirigir">04</label>
+                        <label><input type="radio" name="seuModoDirigir" value="05" ng-model="entrevista.seuModoDirigir">05</label>
+                        <label><input type="radio" name="seuModoDirigir" value="06" ng-model="entrevista.seuModoDirigir">06</label>
+                        <label><input type="radio" name="seuModoDirigir" value="07" ng-model="entrevista.seuModoDirigir">07</label>
+                        <label><input type="radio" name="seuModoDirigir" value="08" ng-model="entrevista.seuModoDirigir">08</label>
+                        <label><input type="radio" name="seuModoDirigir" value="09" ng-model="entrevista.seuModoDirigir">09</label>
+                        <label><input type="radio" name="seuModoDirigir" value="10" ng-model="entrevista.seuModoDirigir">10</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2"></label>
+                    <div class="col-sm-4">
+                        <label for="seuModoDirigirOpine" class="form-control-label">Comente sobre o assunto:</label>
+                        <input type="text" class="form-control" id="seuModoDirigirOpine" ng-model="entrevista.seuModoDirigir">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2"></label>
+                    <div class="col-sm-6" id="ensinoCFC">
+                        <label for="ensinoCFC" class="form-control-label">Se você tivesse que dar uma nota de 0 (zero) a 10 (dez), que nota daria para o seu modo de dirigir, comparado com o modo dos motoristas brasileiros:</label>
+                        <label><input type="radio" name="ensinoCFC" value="0" ng-model="entrevista.ensinoCFC">0</label>
+                        <label><input type="radio" name="ensinoCFC" value="01" ng-model="entrevista.ensinoCFC">01</label>
+                        <label><input type="radio" name="ensinoCFC" value="02" ng-model="entrevista.ensinoCFC">02</label>
+                        <label><input type="radio" name="ensinoCFC" value="03" ng-model="entrevista.ensinoCFC">03</label>
+                        <label><input type="radio" name="ensinoCFC" value="04" ng-model="entrevista.ensinoCFC">04</label>
+                        <label><input type="radio" name="ensinoCFC" value="05" ng-model="entrevista.ensinoCFC">05</label>
+                        <label><input type="radio" name="ensinoCFC" value="06" ng-model="entrevista.ensinoCFC">06</label>
+                        <label><input type="radio" name="ensinoCFC" value="07" ng-model="entrevista.ensinoCFC">07</label>
+                        <label><input type="radio" name="ensinoCFC" value="08" ng-model="entrevista.ensinoCFC">08</label>
+                        <label><input type="radio" name="ensinoCFC" value="09" ng-model="entrevista.ensinoCFC">09</label>
+                        <label><input type="radio" name="ensinoCFC" value="10" ng-model="entrevista.ensinoCFC">10</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2"></label>
+                    <div class="col-sm-6">
+                        <label for="ensinoCFCOpine" class="form-control-label">Por quê?</label>
+                        <input type="text" class="form-control" id="ensinoCFCOpine" ng-model="entrevista.ensinoCFC">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2"></label>
+                    <div class="col-sm-6" id="examesDetran">
+                        <label for="examesDetran" class="form-control-label">Se você tivesse que dar uma nota de 0 (zero) a 10 (dez), que nota daria para o seu modo de dirigir, comparado com o modo dos motoristas brasileiros:</label>
+                        <label><input type="radio" name="examesDetran" value="0" ng-model="entrevista.examesDetran">0</label>
+                        <label><input type="radio" name="examesDetran" value="01" ng-model="entrevista.examesDetran">01</label>
+                        <label><input type="radio" name="examesDetran" value="02" ng-model="entrevista.examesDetran">02</label>
+                        <label><input type="radio" name="examesDetran" value="03" ng-model="entrevista.examesDetran">03</label>
+                        <label><input type="radio" name="examesDetran" value="04" ng-model="entrevista.examesDetran">04</label>
+                        <label><input type="radio" name="examesDetran" value="05" ng-model="entrevista.examesDetran">05</label>
+                        <label><input type="radio" name="examesDetran" value="06" ng-model="entrevista.examesDetran">06</label>
+                        <label><input type="radio" name="examesDetran" value="07" ng-model="entrevista.examesDetran">07</label>
+                        <label><input type="radio" name="examesDetran" value="08" ng-model="entrevista.examesDetran">08</label>
+                        <label><input type="radio" name="examesDetran" value="09" ng-model="entrevista.examesDetran">09</label>
+                        <label><input type="radio" name="examesDetran" value="10" ng-model="entrevista.examesDetran">10</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2"></label>
+                    <div class="col-sm-6">
+                        <label for="examesDetranPorque" class="form-control-label">O que você mais gosta no trânsito? Por quê?</label>
+                        <input type="text" class="form-control" id="examesDetranPorque" ng-model="entrevista.examesDetran">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2"></label>
+                    <div class="col-sm-6">
+                        <label for="gostaTransito" class="form-control-label">Por quê?</label>
+                        <input type="text" class="form-control" id="gostaTransito" ng-model="entrevista.gostaTransito">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2"></label>
+                    <div class="col-sm-6">
+                        <label for="examesDetranPorque" class="form-control-label">O que você mais gosta no trânsito? Por quê?</label>
+                        <input type="text" class="form-control" id="examesDetranPorque" ng-model="entrevista.examesDetran">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2"></label>
+                    <div class="col-sm-6">
+                        <label for="menosGostaTransito" class="form-control-label">Qual sua opinião sobre acidente de trânsito?</label>
+                        <input type="text" class="form-control" id="menosGostaTransito" ng-model="entrevista.opiniaoAcidenteTransito">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2"></label>
+                    <div class="col-sm-6">
+                        <label for="opiniaoAcidenteTransito" class="form-control-label">O que você menos gosta no trânsito? Por quê?</label>
+                        <input type="text" class="form-control" id="opiniaoAcidenteTransito" ng-model="entrevista.opiniaoAcidenteTransito">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2"></label>
+                    <div class="col-sm-6">
+                        <label for="segurancaTransito" class="form-control-label">O que você acha sobre a segurança de trânsito?</label>
+                        <input type="text" class="form-control" id="segurancaTransito" ng-model="entrevista.segurancaTransito">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2"></label>
+                    <div class="col-sm-6">
+                        <label for="medidasAcertadasSegurancaTransito" class="form-control-label">Em sua opinião, quais medidas mais acertadas estão sendo ou foram tomadas na sua cidade e/ou estado e/ou Brasil, nos últimos anos, em prol da segurança de trânsito?</label>
+                        <input type="text" class="form-control" id="medidasAcertadasSegurancaTransito" ng-model="entrevista.medidasAcertadasSegurancaTransito">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2"></label>
+                    <div class="col-sm-6">
+                        <label for="medidasReduzirAcidentes" class="form-control-label">Se você tivesse algum poder (político/autoridade de trânsito), que medidas tomaria para reduzir os acidentes de trânsito?</label>
+                        <input type="text" class="form-control" id="medidasReduzirAcidentes" ng-model="entrevista.medidasReduzirAcidentes">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2"></label>
+                    <div class="col-sm-6">
+                        <label for="pretendeUtilizarCNH" class="form-control-label">Como você pretende utilizar sua Carteira Nacional de Habilitação?</label>
+                        <input type="text" class="form-control" id="pretendeUtilizarCNH" ng-model="entrevista.pretendeUtilizarCNH">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2"></label>
+                    <div class="col-sm-6">
+                        <label for="pretendeFazerMelhorarCondicoesTransito" class="form-control-label">Como motorista, o que você pretende fazer para melhorar as condições de trânsito na sua cidade/ estado?</label>
+                        <input type="text" class="form-control" id="pretendeFazerMelhorarCondicoesTransito" ng-model="entrevista.pretendeFazerMelhorarCondicoesTransito">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2"></label>
+                    <div class="col-sm-6">
+                        <label for="informacoesImportantes" class="form-control-label">Acrescente outras informações que julgar importantes:</label>
+                        <input type="text" class="form-control" id="informacoesImportantes" ng-model="entrevista.informacoesImportantes">
+                    </div>
+                </div>
+
+            </fieldset>
 
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">

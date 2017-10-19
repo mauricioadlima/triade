@@ -14,6 +14,56 @@ public class Entrevista {
 	@NotNull
 	private String nome;
 
+	private String dataNascimento;
+
+	private String genero;
+
+	private String naturalidade;
+
+	private String nacionalidade;
+
+	private String estadoCivil;
+
+	private String escolaridade;
+
+	private String nomePai;
+
+	private String nomeMae;
+
+	private String logradouro;
+
+	private String numero;
+
+	private String cep;
+
+	private String estado;
+
+	private String bairro;
+
+	private String cidade;
+
+	private String telefoneResidencial;
+
+	private String telefoneComercial;
+
+	private String email;
+
+	private String trabalha;
+
+	private String nomeEmpresa;
+
+	private String tempoServico;
+
+	private String motivoCnh;
+
+	private String temProblemaSaude;
+
+	private String senteFadiga;
+
+	private String trabalhaNoturno;
+
+	private String bebidaAlcoolica;
+
 	public String getNome() {
 		return nome;
 	}
