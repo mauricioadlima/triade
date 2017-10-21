@@ -1,11 +1,11 @@
-<ng-include src="'app/views/alert.html'"></ng-include>
+<ng-include src="'app/components/alert.html'"></ng-include>
 <form class="form-horizontal">
     <fieldset>
         <legend>Dados Pessoais</legend>
         <div class="form-group">
-            <label for="nome" class="col-sm-2 control-label">Nome</label>
+            <label class="col-sm-2 control-label">Nome</label>
             <div class="col-sm-7">
-                <input type="text" class="form-control" id="nome" ng-model="entrevista.nome">
+                <ng-include src="'app/components/consultar.html'"></ng-include>
             </div>
         </div>
 
@@ -17,7 +17,9 @@
 
             <label for="genero" class="col-sm-1 control-label">Gênero</label>
             <div class="col-sm-3">
-                <input type="text" class="form-control" id="genero" ng-model="entrevista.genero">
+                <select class="form-control" id="genero" ng-model="entrevista.genero">
+                    <option ng-repeat="i in possiveisGeneros" ng-value="i.value">{{i.label}}</option>
+                </select>
             </div>
         </div>
 
@@ -36,12 +38,16 @@
         <div class="form-group">
             <label for="estadoCivil" class="col-sm-2 control-label">Estado Civil</label>
             <div class="col-sm-3">
-                <input type="text" class="form-control" id="estadoCivil" ng-model="entrevista.estadoCivil">
+                <select class="form-control" id="estadoCivil" ng-model="entrevista.estadoCivil">
+                    <option ng-repeat="i in possiveisEstadosCivis" ng-value="i.value">{{i.label}}</option>
+                </select>
             </div>
 
             <label for="escolaridade" class="col-sm-1 control-label">Escolaridade</label>
             <div class="col-sm-3">
-                <input type="text" class="form-control" id="escolaridade" ng-model="entrevista.escolaridade">
+                <select class="form-control" id="escolaridade" ng-model="entrevista.escolaridade">
+                    <option ng-repeat="i in possiveisEscolaridades" ng-value="i.value">{{i.label}}</option>
+                </select>
             </div>
         </div>
 
@@ -78,12 +84,21 @@
         <div class="form-group">
             <label for="cep" class="col-sm-2 control-label">CEP</label>
             <div class="col-sm-3">
-                <input type="text" class="form-control" id="cep" ng-model="entrevista.cep" ng-blur="buscaCep()">
+                <div class="input-group">
+                    <input type="text" id="cep" class="form-control" ng-model="entrevista.cep"/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" ng-click="buscarCep()">
+                            <span class="glyphicon glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
             </div>
 
             <label for="estado" class="col-sm-1 control-label">Estado</label>
             <div class="col-sm-3">
-                <input type="text" class="form-control" id="estado" ng-model="entrevista.estado">
+                <select class="form-control" id="estado" ng-model="entrevista.estado">
+                    <option ng-repeat="i in estados" ng-value="i.value">{{i.label}}</option>
+                </select>
             </div>
         </div>
 
@@ -231,14 +246,12 @@
 
         <div class="form-group">
             <label for="medicamentosOntem" class="col-sm-2 control-label">Você tomou medicamento ontem a noite ou hoje cedo?</label>
-            <div class="radio" id="medicamentosOntem">
+            <div class="radio col-sm-2" id="medicamentosOntem">
                 <label><input type="radio" name="medicamentosOntem" value="sim" ng-model="entrevista.medicamentosOntem">Sim</label>
                 <label><input type="radio" name="medicamentosOntem" value="nao" ng-model="entrevista.medicamentosOntem">Não</label>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="quaisMedicamentosTomou" class="col-sm-2 control-label">Quais?</label>
+            <label for="quaisMedicamentosTomou" class="col-sm-1 control-label">Quais?</label>
             <div class="col-sm-4">
                 <input type="text" class="form-control" id="quaisMedicamentosTomou" ng-model="entrevista.quaisMedicamentosTomou">
             </div>
@@ -246,40 +259,49 @@
 
         <div class="form-group">
             <label for="possuiDeficiencia" class="col-sm-2 control-label">Possui algum tipo de deficiência?</label>
-            <div class="col-sm-4">
-                <input type="text" class="form-control" id="possuiDeficiencia" ng-model="entrevista.possuiDeficiencia">
+            <div class="col-sm-3">
+                <select class="form-control" id="possuiDeficiencia" ng-model="entrevista.possuiDeficiencia">
+                    <option ng-repeat="i in possiveisDeficiencias" ng-value="i.value">{{i.label}}</option>
+                </select>
             </div>
-            <label for="possuiDeficienciaOutras" class="col-sm-2 control-label">Outras?</label>
-            <div class="col-sm-4">
+
+            <label for="possuiDeficienciaOutras" class="col-sm-1 control-label">Outras?</label>
+            <div class="col-sm-3">
                 <input type="text" class="form-control" id="possuiDeficienciaOutras" ng-model="entrevista.possuiDeficienciaOutras">
             </div>
         </div>
 
         <div class="form-group">
-            <label for="possuiTipoDoenca" class="col-sm-2 control-label">Possui algum tipo de doença?</label>
-            <div class="col-sm-4">
-                <input type="text" class="form-control" id="possuiTipoDoenca" ng-model="entrevista.possuiTipoDoenca">
+            <label for="possuiDoenca" class="col-sm-2 control-label">Possui algum tipo de doença?</label>
+            <div class="col-sm-3">
+                <select class="form-control" id="possuiDoenca" ng-model="entrevista.possuiDoenca">
+                    <option ng-repeat="i in possiveisDoencas" ng-value="i.value">{{i.label}}</option>
+                </select>
             </div>
-            <label for="possuiTipoDoencaOutras" class="col-sm-2 control-label">Outras?</label>
-            <div class="col-sm-4">
-                <input type="text" class="form-control" id="possuiTipoDoencaOutras" ng-model="entrevista.possuiTipoDoencaOutras">
+
+            <label for="possuiDoencaOutras" class="col-sm-1 control-label">Outras?</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="possuiDoencaOutras" ng-model="entrevista.possuiDoencaOutras">
             </div>
         </div>
 
         <div class="form-group">
             <label for="problemaPsicologico" class="col-sm-2 control-label">Apresenta algum problema psicológico?</label>
-            <div class="col-sm-4">
-                <input type="text" class="form-control" id="problemaPsicologico" ng-model="entrevista.problemaPsicologico">
+            <div class="col-sm-3">
+                <select class="form-control" id="problemaPsicologico" ng-model="entrevista.problemaPsicologico">
+                    <option ng-repeat="i in possiveisProblemasPsicologicos" ng-value="i.value">{{i.label}}</option>
+                </select>
             </div>
-            <label for="problemaPsicologicoOutras" class="col-sm-2 control-label">Outras?</label>
-            <div class="col-sm-4">
+
+            <label for="problemaPsicologicoOutras" class="col-sm-1 control-label">Outras?</label>
+            <div class="col-sm-3">
                 <input type="text" class="form-control" id="problemaPsicologicoOutras" ng-model="entrevista.problemaPsicologicoOutras">
             </div>
         </div>
 
         <div class="form-group">
             <label for="problemaPsicologicoFaleARespeito" class="col-sm-2 control-label">Fale a Respeito:</label>
-            <div class="col-sm-4">
+            <div class="col-sm-7">
                 <input type="text" class="form-control" id="problemaPsicologicoFaleARespeito" ng-model="entrevista.problemaPsicologicoFaleARespeito">
             </div>
         </div>
@@ -294,7 +316,7 @@
 
         <div class="form-group">
             <label for="tratamentoMedicoPsicologicoFaleARespeito" class="col-sm-2 control-label">Fale a Respeito:</label>
-            <div class="col-sm-4">
+            <div class="col-sm-7">
                 <input type="text" class="form-control" id="tratamentoMedicoPsicologicoFaleARespeito" ng-model="entrevista.tratamentoMedicoPsicologicoFaleARespeito">
             </div>
         </div>
@@ -312,7 +334,7 @@
 
             <div class="form-group">
                 <label for="familiaDependenciaAlcoolDrogaDescreva" class="col-sm-2 control-label">Se sim, descreva:</label>
-                <div class="col-sm-4">
+                <div class="col-sm-7">
                     <input type="text" class="form-control" id="familiaDependenciaAlcoolDrogaDescreva" ng-model="entrevista.familiaDependenciaAlcoolDrogaDescreva">
                 </div>
             </div>
@@ -327,21 +349,21 @@
 
             <div class="form-group">
                 <label for="familiaDoencaGraveDescreva" class="col-sm-2 control-label">Se sim, descreva:</label>
-                <div class="col-sm-4">
+                <div class="col-sm-7">
                     <input type="text" class="form-control" id="familiaDoencaGraveDescreva" ng-model="entrevista.familiaDoencaGraveDescreva">
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="hobbie" class="col-sm-2 control-label">Quais são suas atividades de lazer, hobbies?</label>
-                <div class="col-sm-4">
+                <div class="col-sm-7">
                     <input type="text" class="form-control" id="hobbie" ng-model="entrevista.hobbie">
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="comoFamilia" class="col-sm-2 control-label">Fale a respeito de sua família:</label>
-                <div class="col-sm-4">
+                <div class="col-sm-7">
                     <input type="text" class="form-control" id="comoFamilia" ng-model="entrevista.comoFamilia">
                 </div>
             </div>
@@ -351,7 +373,7 @@
 
                 <div class="form-group">
                     <label class="col-sm-2"></label>
-                    <div class="col-sm-6" id="notaDirigirMotoristasBrasileiros">
+                    <div class="col-sm-6 rate" id="notaDirigirMotoristasBrasileiros">
                         <label for="notaDirigirMotoristasBrasileiros" class="form-control-label">Se você tivesse que dar uma nota de 0 (zero) a 10 (dez), que nota daria para o modo de dirigir dos motoristas brasileiros:</label>
                         <label><input type="radio" name="notaDirigirMotoristasBrasileiros" value="0" ng-model="entrevista.notaDirigirMotoristasBrasileiros">0</label>
                         <label><input type="radio" name="notaDirigirMotoristasBrasileiros" value="01" ng-model="entrevista.notaDirigirMotoristasBrasileiros">01</label>
@@ -369,7 +391,7 @@
 
                 <div class="form-group">
                     <label class="col-sm-2"></label>
-                    <div class="col-sm-6" id="seuModoDirigir">
+                    <div class="col-sm-6 rate" id="seuModoDirigir">
                         <label for="seuModoDirigir" class="form-control-label">Se você tivesse que dar uma nota de 0 (zero) a 10 (dez), que nota daria para o seu modo de dirigir, comparado com o modo dos motoristas brasileiros:</label>
                         <label><input type="radio" name="seuModoDirigir" value="0" ng-model="entrevista.seuModoDirigir">0</label>
                         <label><input type="radio" name="seuModoDirigir" value="01" ng-model="entrevista.seuModoDirigir">01</label>
@@ -387,15 +409,15 @@
 
                 <div class="form-group">
                     <label class="col-sm-2"></label>
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <label for="seuModoDirigirOpine" class="form-control-label">Comente sobre o assunto:</label>
-                        <input type="text" class="form-control" id="seuModoDirigirOpine" ng-model="entrevista.seuModoDirigir">
+                        <input type="text" class="form-control" id="seuModoDirigirOpine" ng-model="entrevista.seuModoDirigirOpine">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-sm-2"></label>
-                    <div class="col-sm-6" id="ensinoCFC">
+                    <div class="col-sm-6 rate" id="ensinoCFC">
                         <label for="ensinoCFC" class="form-control-label">Se você tivesse que dar uma nota de 0 (zero) a 10 (dez), que nota daria para o seu modo de dirigir, comparado com o modo dos motoristas brasileiros:</label>
                         <label><input type="radio" name="ensinoCFC" value="0" ng-model="entrevista.ensinoCFC">0</label>
                         <label><input type="radio" name="ensinoCFC" value="01" ng-model="entrevista.ensinoCFC">01</label>
@@ -415,13 +437,13 @@
                     <label class="col-sm-2"></label>
                     <div class="col-sm-6">
                         <label for="ensinoCFCOpine" class="form-control-label">Por quê?</label>
-                        <input type="text" class="form-control" id="ensinoCFCOpine" ng-model="entrevista.ensinoCFC">
+                        <input type="text" class="form-control" id="ensinoCFCOpine" ng-model="entrevista.ensinoCFCOpine">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-sm-2"></label>
-                    <div class="col-sm-6" id="examesDetran">
+                    <div class="col-sm-6 rate" id="examesDetran">
                         <label for="examesDetran" class="form-control-label">Se você tivesse que dar uma nota de 0 (zero) a 10 (dez), que nota daria para o seu modo de dirigir, comparado com o modo dos motoristas brasileiros:</label>
                         <label><input type="radio" name="examesDetran" value="0" ng-model="entrevista.examesDetran">0</label>
                         <label><input type="radio" name="examesDetran" value="01" ng-model="entrevista.examesDetran">01</label>
@@ -440,15 +462,7 @@
                 <div class="form-group">
                     <label class="col-sm-2"></label>
                     <div class="col-sm-6">
-                        <label for="examesDetranPorque" class="form-control-label">O que você mais gosta no trânsito? Por quê?</label>
-                        <input type="text" class="form-control" id="examesDetranPorque" ng-model="entrevista.examesDetran">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2"></label>
-                    <div class="col-sm-6">
-                        <label for="gostaTransito" class="form-control-label">Por quê?</label>
+                        <label for="gostaTransito" class="form-control-label">O que você MAIS gosta no trânsito? Por quê?</label>
                         <input type="text" class="form-control" id="gostaTransito" ng-model="entrevista.gostaTransito">
                     </div>
                 </div>
@@ -456,23 +470,15 @@
                 <div class="form-group">
                     <label class="col-sm-2"></label>
                     <div class="col-sm-6">
-                        <label for="examesDetranPorque" class="form-control-label">O que você mais gosta no trânsito? Por quê?</label>
-                        <input type="text" class="form-control" id="examesDetranPorque" ng-model="entrevista.examesDetran">
+                        <label for="menosGostaTransito" class="form-control-label">O que você MENOS gosta no trânsito? Por quê?</label>
+                        <input type="text" class="form-control" id="menosGostaTransito" ng-model="entrevista.menosGostaTransito">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-sm-2"></label>
                     <div class="col-sm-6">
-                        <label for="menosGostaTransito" class="form-control-label">Qual sua opinião sobre acidente de trânsito?</label>
-                        <input type="text" class="form-control" id="menosGostaTransito" ng-model="entrevista.opiniaoAcidenteTransito">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2"></label>
-                    <div class="col-sm-6">
-                        <label for="opiniaoAcidenteTransito" class="form-control-label">O que você menos gosta no trânsito? Por quê?</label>
+                        <label for="opiniaoAcidenteTransito" class="form-control-label">Qual sua opinião sobre acidente de trânsito?</label>
                         <input type="text" class="form-control" id="opiniaoAcidenteTransito" ng-model="entrevista.opiniaoAcidenteTransito">
                     </div>
                 </div>
@@ -524,7 +530,6 @@
                         <input type="text" class="form-control" id="informacoesImportantes" ng-model="entrevista.informacoesImportantes">
                     </div>
                 </div>
-
             </fieldset>
 
     <div class="form-group">
@@ -534,3 +539,4 @@
         </div>
     </div>
 </form>
+
