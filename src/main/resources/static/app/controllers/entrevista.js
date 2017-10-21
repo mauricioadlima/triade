@@ -94,7 +94,7 @@ app.controller('EntrevistaCtrl', function($scope, $rootScope, $location, $http, 
 
    $scope.salvar = function() {
         $http.post('/api/entrevista', $scope.entrevista, {}).then(function(data) {
-            $rootScope.addAlert('success', 'Anamnese salva com sucesso!');
+            $rootScope.addAlert('success', 'Entrevista salva com sucesso!');
         }, function() {
             $rootScope.addAlert('danger', 'Erro ao salvar a entrevista!');
         });

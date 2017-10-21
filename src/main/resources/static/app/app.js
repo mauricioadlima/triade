@@ -18,11 +18,6 @@ app.config(function($routeProvider, $locationProvider)
       controller  : 'EntrevistaCtrl',
    })
 
-    .when('/consultar-entrevista', {
-         templateUrl : 'app/views/consultar-entrevista.html',
-         controller  : 'ConsultarEntrevistaCtrl',
-    })
-
    .otherwise ({ redirectTo: '/' });
 });
 
